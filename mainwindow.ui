@@ -29,6 +29,9 @@
     </property>
     <item>
      <widget class="QPushButton" name="pbFullscreen">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="text">
        <string>fullscreen</string>
       </property>

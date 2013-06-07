@@ -33,7 +33,8 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    is_fullscreen_(false)
+    is_fullscreen_(false),
+    fullscreen_(QKeySequence(Qt::Key_F12),this)
 {
     ui->setupUi(this);
 
@@ -67,7 +68,9 @@ MainWindow::MainWindow(QWidget *parent) :
     timer.start( 20 );
     setWindowState(Qt::WindowMaximized);
     std::cout << "bla" << std::endl;
-
+    fullscreen_.setContext(Qt::ApplicationShortcut);
+    ui->pbFullscreen->setVisible(false);
+    connect( &fullscreen_, SIGNAL(activated()), this, SLOT(on_pbFullscreen_clicked()));
 }
 
 MainWindow::~MainWindow()

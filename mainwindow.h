@@ -25,6 +25,7 @@
 #include <QSet>
 #include <QTimer>
 #include <QGraphicsScene>
+#include <QShortcut>
 
 namespace Ui {
 class MainWindow;
@@ -51,6 +52,7 @@ private:
     QTimer timer;
     QString path_;
     QGraphicsScene scene_;
+    QShortcut fullscreen_;
 };
 
 #endif // MAINWINDOW_H
