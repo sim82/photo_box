@@ -113,7 +113,7 @@ void MainWindow::on_watcher_directoryChanged( const QString &path ) {
 
 
             std::cout << "printing!" << std::endl;
-            if( false ) {
+            if( !false ) {
                 QPrinter printer;
                 printer.setOrientation( QPrinter::Landscape );
                 QPainter painter(&printer);
@@ -139,13 +139,14 @@ void MainWindow::on_watcher_directoryChanged( const QString &path ) {
 
 
             show_pixmap(pixmap);
-            QRectF rect = ui->graphicsView->mapToScene(ui->graphicsView->viewport()->geometry()).boundingRect();
-            QFont font;
-            font.setPixelSize(200);
-            QGraphicsSimpleTextItem  *text = scene_.addSimpleText( "printing", font);
-            text->setBrush(QBrush(Qt::blue));
-            text->setPos( rect.x(), rect.y());
-
+            if( false ) {
+                QRectF rect = ui->graphicsView->mapToScene(ui->graphicsView->viewport()->geometry()).boundingRect();
+                QFont font;
+                font.setPixelSize(200);
+                QGraphicsSimpleTextItem  *text = scene_.addSimpleText( "printing", font);
+                text->setBrush(QBrush(Qt::blue));
+                text->setPos( rect.x(), rect.y());
+            }
             timer.start( 10000 );
 //            p.prin
         }
